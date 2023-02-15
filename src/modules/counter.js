@@ -11,6 +11,14 @@ export const setDiff = diff => ({ type: SET_DIFF, diff });
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });
 
+// getState를 쓰지 않는다면 굳이 파라미터로 받아올 필요 없습니다.
+export const increaseAsync = () => dispatch => {
+    setTimeout(() => dispatch(increase()), 1000);
+};
+export const decreaseAsync = () => dispatch => {
+    setTimeout(() => dispatch(decrease()), 1000);
+};
+
 /* 초기 상태 선언 */
 const initialState = {
     number: 0,
